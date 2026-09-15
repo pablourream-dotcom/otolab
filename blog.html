@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog de actualización en ORL — Otolab</title>
+<meta name="description" content="Notas breves de actualización en otorrinolaringología, con fuente declarada y nivel de lectura en cada una.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body style="--ac:#FF5A36;">
+
+<nav class="nav">
+  <a href="index.html" class="logo">
+    <strong>Otolab<sup>&reg;</sup></strong>
+    <span class="spark" aria-hidden="true">&#10023;&#xFE0E;</span>
+  </a>
+  <div class="nav-links" style="display:flex;">
+    <span class="current">Blog</span>
+    <a href="index.html#patologias">Patologías</a>
+    <a href="pacientes.html">Pacientes</a>
+  </div>
+</nav>
+
+<main>
+
+<header class="wrap wrap--narrow blog-header">
+  <div class="eyebrow" style="margin-bottom:20px;">Sección 01 · Actualización</div>
+  <div class="row">
+    <h1>Lo que cambió esta semana en ORL</h1>
+    <p>Notas breves de actualización, con la fuente declarada antes del resumen y un nivel de lectura indicado en cada una.</p>
+  </div>
+</header>
+
+<section class="wrap wrap--narrow">
+  <div class="filter-row">
+    <span class="filter-label">Filtrar</span>
+    <div class="chips" id="chips"></div>
+    <span class="chip-count" id="chip-count"></span>
+  </div>
+</section>
+
+<section class="wrap wrap--narrow post-grid" id="post-grid"></section>
+
+<section id="articulo" class="wrap wrap--narrow">
+  <div class="article-grid">
+    <aside class="toc">
+      <span class="toc-label">Contenidos</span>
+      <a href="#articulo">Contexto y fuente</a>
+      <a href="#articulo">Evidencia disponible</a>
+      <a href="#articulo">Esquema práctico</a>
+      <a href="#articulo">Conducta recomendada</a>
+    </aside>
+    <article class="article">
+      <div class="article-meta">Otología · 12 sep 2026 · 6 min · Nivel especialista</div>
+      <h2>Corticoide intratimpánico en hipoacusia súbita</h2>
+      <div class="article-source">Fuente: Manual de Otorrinolaringología, 3ª ed. (2026) + guía clínica vigente</div>
+      <p>Estructura del artículo tipo: la fuente se declara antes del resumen, el nivel de lectura queda visible en la cabecera y el cuerpo se ordena en cuatro bloques cortos con la conducta al final. Este texto es un placeholder estructural.</p>
+      <p>En desktop la tabla de contenidos queda fija a la izquierda y sigue el scroll; en móvil se colapsa arriba del cuerpo. Las citas y los números finales reemplazan este bloque cuando cargues el contenido real.</p>
+      <blockquote>La ventana terapéutica manda: lo que se decide en las primeras dos semanas define el resultado.</blockquote>
+      <p>Cierre con la conducta recomendada y el enlace a la ficha de patología correspondiente, para que el lector pase del artículo al resumen con toggle General ↔ Especialista.</p>
+      <div class="article-actions">
+        <a href="index.html#patologias" class="btn btn--solid">Ir a la ficha de Hipoacusia</a>
+        <a href="pacientes.html" class="btn btn--outline">Versión para pacientes</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="wrap wrap--narrow foot-line">
+  <span>Otolab · Blog de actualización</span>
+  <a href="index.html">Volver al inicio</a>
+</footer>
+
+</main>
+
+<script src="script.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var SUBTEMAS = ["Todo", "Otología", "Rinología", "Laringología", "Cabeza y cuello"];
+  var POSTS = [
+    { tema: "Otología", fecha: "12 sep 2026", min: "6 min", nivel: "Especialista", titulo: "Corticoide intratimpánico en hipoacusia súbita", bajada: "Qué dice la evidencia sobre el rescate cuando falla el esquema sistémico. Placeholder estructural.", fuente: "Manual de ORL, 3ª ed." },
+    { tema: "Rinología", fecha: "08 sep 2026", min: "4 min", nivel: "General", titulo: "Rinosinusitis aguda: cuándo el antibiótico sí", bajada: "Criterios de duración, severidad y empeoramiento tras mejoría. Placeholder estructural.", fuente: "Guía clínica vigente" },
+    { tema: "Laringología", fecha: "02 sep 2026", min: "5 min", nivel: "General", titulo: "Disfonía de más de tres semanas", bajada: "El umbral para nasofibroscopía y las banderas rojas que lo adelantan. Placeholder estructural.", fuente: "ORL para Médicos Generales UC" },
+    { tema: "Otología", fecha: "28 ago 2026", min: "7 min", nivel: "Especialista", titulo: "Complicaciones de la otitis media aguda", bajada: "De la mastoiditis a la trombosis del seno lateral: señales y estudio. Placeholder estructural.", fuente: "Manual de ORL, 3ª ed." },
+    { tema: "Cabeza y cuello", fecha: "21 ago 2026", min: "6 min", nivel: "Especialista", titulo: "Nódulo cervical en el adulto", bajada: "Ruta de estudio ordenada por probabilidad y edad. Placeholder estructural.", fuente: "Guía clínica vigente" },
+    { tema: "Rinología", fecha: "14 ago 2026", min: "3 min", nivel: "General", titulo: "Epistaxis: qué hacer en los primeros diez minutos", bajada: "Compresión, vasoconstrictor y el momento de derivar. Placeholder estructural.", fuente: "ORL para Médicos Generales UC" }
+  ];
+
+  var chipsEl = document.getElementById("chips");
+  var countEl = document.getElementById("chip-count");
+  var gridEl = document.getElementById("post-grid");
+  var filtro = "Todo";
+
+  function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
+
+  function renderChips() {
+    chipsEl.innerHTML = SUBTEMAS.map(function (t) {
+      return '<button type="button" class="chip" data-chip="' + esc(t) + '" aria-pressed="' + (t === filtro) + '">' + esc(t) + '</button>';
+    }).join("");
+    chipsEl.querySelectorAll("[data-chip]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        filtro = btn.getAttribute("data-chip");
+        renderChips();
+        renderPosts();
+      });
+    });
+  }
+
+  function renderPosts() {
+    var posts = filtro === "Todo" ? POSTS : POSTS.filter(function (p) { return p.tema === filtro; });
+    countEl.textContent = posts.length === 1 ? "1 artículo" : posts.length + " artículos";
+    gridEl.innerHTML = posts.map(function (p) {
+      return '<a href="#articulo" class="frame card post-card">' +
+        '<div class="post-meta"><span class="tema">' + esc(p.tema) + '</span><span>' + esc(p.fecha) + '</span><span>' + esc(p.min) + '</span></div>' +
+        '<span class="post-title">' + esc(p.titulo) + '</span>' +
+        '<span class="post-bajada">' + esc(p.bajada) + '</span>' +
+        '<span class="post-foot"><i class="nivel-tag">' + esc(p.nivel) + '</i>' + esc(p.fuente) + '</span>' +
+      '</a>';
+    }).join("");
+    gridEl.style.animation = "none";
+    void gridEl.offsetHeight;
+    gridEl.style.animation = "ot-fade-up .38s cubic-bezier(.2,.7,.3,1) both";
+    if (window.__otolabAddCorners) window.__otolabAddCorners(gridEl);
+  }
+
+  renderChips();
+  renderPosts();
+})();
+</script>
+</body>
+</html>

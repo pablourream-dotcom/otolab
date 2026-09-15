@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Otolab — Un laboratorio abierto de ORL</title>
+<meta name="description" content="Otolab: fichas, casos y biblioteca de otorrinolaringología en dos niveles de lectura, general y especialista.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body style="--ac:#FF5A36;">
+
+<nav class="nav nav--hero">
+  <div class="logo">
+    <strong>Otolab<sup>&reg;</sup></strong>
+    <span class="spark" aria-hidden="true">&#10023;&#xFE0E;</span>
+  </div>
+  <div class="nav-links">
+    <a href="#patologias">Patologías</a>
+    <a href="#casos">Casos</a>
+    <a href="#biblioteca">Biblioteca</a>
+    <a href="blog.html">Blog</a>
+    <a href="pacientes.html">Pacientes</a>
+  </div>
+  <a href="#contacto" class="nav-cta">Contacto</a>
+  <button type="button" class="burger" data-burger aria-label="Abrir menú" aria-expanded="false">
+    <i></i><i></i><i></i>
+  </button>
+</nav>
+
+<div class="menu-overlay" data-menu-overlay>
+  <a href="#patologias">Patologías</a>
+  <a href="#casos">Casos clínicos</a>
+  <a href="#biblioteca">Biblioteca</a>
+  <a href="blog.html">Blog</a>
+  <a href="pacientes.html">Pacientes</a>
+  <a href="#contacto" class="accent">Contacto</a>
+</div>
+
+<header class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-fade" aria-hidden="true"></div>
+  <div class="hero-scan" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">Difusión educativa · Otorrinolaringología</div>
+      <p class="hero-line" id="typed-line" aria-live="polite"><span id="typed-text"></span><span class="hero-cursor" id="typed-cursor"></span></p>
+      <div class="pills">
+        <a href="#patologias" class="pill pill--solid">Ver patologías</a>
+        <a href="#casos" class="pill pill--ghost">Resolver un caso clínico</a>
+        <a href="#biblioteca" class="pill pill--ghost">Biblioteca de papers</a>
+        <a href="pacientes.html" class="pill pill--ghost">Para pacientes</a>
+        <button type="button" class="pill pill--outline" data-copy-email>Escríbenos: <u>hola@otolab.cl</u><span class="tag" data-copy-label>COPIAR</span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="patologias" class="wrap">
+  <div class="section-head" data-reveal>
+    <h2>El mismo contenido, dos profundidades</h2>
+    <p>Ninguna sección se duplica. El interruptor General ↔ Especialista cambia la profundidad de la misma ficha: lo esencial para resolver en consulta, o los matices, esquemas avanzados y consideraciones quirúrgicas.</p>
+  </div>
+
+  <div class="frame ficha" data-reveal>
+    <div class="ficha-head">
+      <div>
+        <div class="eyebrow">Ficha 04 · Otología</div>
+        <h3>Hipoacusia</h3>
+        <div class="ficha-sub">Evaluación conductiva y sensorioneural</div>
+      </div>
+      <div class="toggle" role="group" aria-label="Nivel de lectura">
+        <button type="button" id="btn-general" aria-pressed="true">General</button>
+        <button type="button" id="btn-especialista" aria-pressed="false">Especialista</button>
+      </div>
+    </div>
+
+    <div class="ficha-grid" id="ficha-grid"></div>
+
+    <div class="ficha-foot">
+      <span class="note" id="ficha-nota">Nivel general · 4 bloques · enfoque esencial de consulta</span>
+      <a href="#patologias">Ver flujograma navegable →</a>
+    </div>
+  </div>
+</section>
+
+<section id="casos" class="wrap">
+  <div class="section-head" style="margin-bottom:36px;" data-reveal>
+    <h2 style="font-size:clamp(30px,5vw,50px);">Seis puertas de entrada</h2>
+    <span class="eyebrow" style="color:var(--fg-70);">Mapa del sitio · 01—06</span>
+  </div>
+  <div class="card-grid">
+    <a href="blog.html" class="frame card" data-reveal>
+      <span class="num">01</span>
+      <span class="title">Blog</span>
+      <span class="line">Actualización en ORL, filtrable por subtema.</span>
+      <span class="route">/blog</span>
+    </a>
+    <a href="#patologias" class="frame card" data-reveal>
+      <span class="num">02</span>
+      <span class="title">Patologías</span>
+      <span class="line">Resúmenes y flujogramas con doble profundidad.</span>
+      <span class="route">/patologias</span>
+    </a>
+    <a href="#casos" class="frame card" data-reveal>
+      <span class="num">03</span>
+      <span class="title">Casos</span>
+      <span class="line">Historias clínicas progresivas con ramificación.</span>
+      <span class="route">/casos</span>
+    </a>
+    <a href="#biblioteca" class="frame card" data-reveal>
+      <span class="num">04</span>
+      <span class="title">Biblioteca</span>
+      <span class="line">Papers y guías, con la fuente siempre visible.</span>
+      <span class="route">/biblioteca</span>
+    </a>
+    <a href="pacientes.html" class="frame card" data-reveal>
+      <span class="num">05</span>
+      <span class="title">Pacientes</span>
+      <span class="line">Los mismos temas en lenguaje simple.</span>
+      <span class="route">/pacientes</span>
+    </a>
+    <a href="#contacto" class="frame card" data-reveal>
+      <span class="num">06</span>
+      <span class="title">Contacto</span>
+      <span class="line">Sugerencias, colaboración y newsletter.</span>
+      <span class="route">/contacto</span>
+    </a>
+  </div>
+</section>
+
+<section id="biblioteca" class="wrap">
+  <div class="library" data-reveal>
+    <div>
+      <div class="eyebrow" style="margin-bottom:10px;">Base de contenido</div>
+      <p>Cada ficha, flujograma y resumen declara su fuente antes del contenido. La biblioteca se construye sobre los dos textos de referencia y las guías clínicas vigentes.</p>
+    </div>
+    <div class="refs">
+      <div class="ref">
+        <div class="label">Referencia 01</div>
+        <div class="title">Otorrinolaringología para Médicos Generales UC</div>
+      </div>
+      <div class="ref">
+        <div class="label">Referencia 02</div>
+        <div class="title">Manual de Otorrinolaringología · 3ª ed., 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="wrap" style="padding-bottom:0;">
+  <div class="frame contact-box" data-reveal>
+    <h2>Escribe, sugiere un tema, suscríbete</h2>
+    <p>El newsletter avisa cuando se publica una ficha nueva o se actualiza un flujograma. Sin costo y sin publicidad.</p>
+    <div class="contact-actions">
+      <a href="#contacto-form" class="btn btn--solid">Ir al formulario</a>
+      <a href="#patologias" class="btn btn--outline">Explorar patologías</a>
+    </div>
+
+    <form class="contact-form" id="contacto-form" data-contact-form>
+      <div>
+        <label for="cf-name">Nombre</label>
+        <input type="text" id="cf-name" name="name" autocomplete="name" required>
+      </div>
+      <div>
+        <label for="cf-email">Correo</label>
+        <input type="email" id="cf-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="field-full">
+        <label for="cf-message">Mensaje o tema sugerido</label>
+        <textarea id="cf-message" name="message" required></textarea>
+      </div>
+      <div class="field-full" style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+        <button type="submit">Enviar</button>
+        <p class="form-note">Se abre tu cliente de correo con el mensaje listo para enviar a hola@otolab.cl.</p>
+      </div>
+    </form>
+  </div>
+  <div class="foot-line">
+    <span>Otolab · Difusión educativa en ORL</span>
+    <span>Contenido educativo, no reemplaza evaluación médica</span>
+  </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var TEXTO = "Aquí la otorrinolaringología se lee en dos niveles. Elige el tuyo y empecemos.";
+  var typedEl = document.getElementById("typed-text");
+  var cursorEl = document.getElementById("typed-cursor");
+  var i = 0;
+  setTimeout(function () {
+    var timer = setInterval(function () {
+      i++;
+      typedEl.textContent = TEXTO.slice(0, i);
+      if (i >= TEXTO.length) {
+        clearInterval(timer);
+        cursorEl.style.display = "none";
+      }
+    }, 38);
+  }, 500);
+
+  var GENERAL = [
+    { num: "01", titulo: "Enfoque inicial", texto: "Anamnesis dirigida y otoscopía: distinguir hipoacusia de transmisión de una sensorioneural antes de pedir estudios. Placeholder estructural — texto clínico pendiente.", fuente: "Fuente: ORL para Médicos Generales UC" },
+    { num: "02", titulo: "Acumetría al alcance", texto: "Weber y Rinne como filtro de consulta: qué combinación orienta a conductiva y cuál a sensorioneural. Placeholder estructural.", fuente: "Fuente: Manual de ORL, 3ª ed." },
+    { num: "03", titulo: "Cuándo derivar", texto: "Banderas rojas que no esperan: hipoacusia súbita, unilateral progresiva, asociada a otorrea o a síntomas neurológicos. Placeholder estructural.", fuente: "Fuente: guía clínica vigente" },
+    { num: "04", titulo: "Qué explicar al paciente", texto: "Expectativas de recuperación, cuidado del ruido y seguimiento audiométrico. Placeholder estructural.", fuente: "Fuente: recursos para pacientes" }
+  ];
+  var ESPECIALISTA = [
+    { num: "01", titulo: "Enfoque inicial", texto: "Anamnesis dirigida y otoscopía, más caracterización topográfica de la lesión y correlación con timpanometría. Placeholder estructural — texto clínico pendiente.", fuente: "Fuente: ORL para Médicos Generales UC" },
+    { num: "02", titulo: "Audiometría e impedanciometría", texto: "Lectura de curvas, GAP óseo-aéreo, tipos de curva timpanométrica y reflejo estapedial; discordancias que obligan a repetir el estudio. Placeholder estructural.", fuente: "Fuente: Manual de ORL, 3ª ed." },
+    { num: "03", titulo: "Estudio complementario", texto: "Potenciales evocados auditivos de tronco, emisiones otoacústicas e imagen (TC de oído vs. RM de CAI) según sospecha. Placeholder estructural.", fuente: "Fuente: guía clínica vigente" },
+    { num: "04", titulo: "Manejo avanzado y quirúrgico", texto: "Corticoides sistémicos e intratimpánicos en súbita, timpanoplastía y osiculoplastía, indicaciones de implante osteointegrado y coclear. Placeholder estructural.", fuente: "Fuente: Manual de ORL, 3ª ed." },
+    { num: "05", titulo: "Matices y errores frecuentes", texto: "Pseudo-conductivas, hipoacusia no orgánica y seguimiento a largo plazo. Placeholder estructural.", fuente: "Fuente: revisión pendiente" }
+  ];
+
+  var grid = document.getElementById("ficha-grid");
+  var nota = document.getElementById("ficha-nota");
+  var btnGeneral = document.getElementById("btn-general");
+  var btnEsp = document.getElementById("btn-especialista");
+
+  function renderFicha(nivel) {
+    var bloques = nivel === "especialista" ? ESPECIALISTA : GENERAL;
+    grid.innerHTML = bloques.map(function (b) {
+      return '<div class="ficha-block">' +
+        '<div style="display:flex; align-items:center; gap:8px;">' +
+          '<span class="num">' + b.num + '</span>' +
+          '<span class="titulo">' + b.titulo + '</span>' +
+        '</div>' +
+        '<p>' + b.texto + '</p>' +
+        '<div class="fuente">' + b.fuente + '</div>' +
+      '</div>';
+    }).join("");
+    nota.textContent = nivel === "especialista"
+      ? "Nivel especialista · 5 bloques · matices y manejo quirúrgico"
+      : "Nivel general · 4 bloques · enfoque esencial de consulta";
+    btnGeneral.setAttribute("aria-pressed", String(nivel === "general"));
+    btnEsp.setAttribute("aria-pressed", String(nivel === "especialista"));
+    grid.style.animation = "none";
+    void grid.offsetHeight;
+    grid.style.animation = "ot-fade-up .4s cubic-bezier(.2,.7,.3,1) both";
+  }
+
+  btnGeneral.addEventListener("click", function () { renderFicha("general"); });
+  btnEsp.addEventListener("click", function () { renderFicha("especialista"); });
+  renderFicha("general");
+})();
+</script>
+</body>
+</html>
